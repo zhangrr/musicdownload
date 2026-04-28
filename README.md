@@ -215,13 +215,13 @@ python -m venv .venv
 ### 3）安装依赖
 
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ### 4）启动服务
 
 ```bash
-python3 musicdownload.py
+uv run musicdownload.py
 ```
 
 默认启动参数：
