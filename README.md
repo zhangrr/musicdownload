@@ -10,7 +10,7 @@
 ![UI](https://img.shields.io/badge/UI-local_web-2563eb)
 
 一个基于 <a href="https://github.com/CharlesPikachu/musicdl">musicdl</a> 的本地 Web 音乐下载器。<br>
-已去掉 <code>PyQt5</code> 桌面界面，改为浏览器可访问的单文件 Flask 应用。
+浏览器可访问的单文件 Flask 应用。
 
 </div>
 
@@ -22,7 +22,7 @@
 
 `musicDownload` 是一个面向本地使用的音乐搜索与下载工具，核心基于 `musicdl`，并在此基础上完成了：
 
-- 桌面版 → Web 版迁移
+- Web 版
 - 实时下载进度展示
 - 下载后自动转 MP3
 - 下载目录网页浏览
@@ -31,7 +31,6 @@
 
 如果你想要的是一个：
 
-- 不依赖 `PyQt5`
 - 打开浏览器就能用
 - 支持多来源搜索
 - 下载后可直接在网页点链接取文件
@@ -66,7 +65,6 @@
 
 ### 1. 本地 Web 界面
 
-- 不再依赖 `PyQt5`
 - 启动后直接用浏览器访问
 - 适合本机或局域网轻量使用
 
@@ -201,14 +199,14 @@ cd musicDownload
 ### 2）创建虚拟环境（推荐）
 
 ```bash
-python3 -m venv .venv
+uv venv --python 3.12
 source .venv/bin/activate
 ```
 
 Windows PowerShell：
 
 ```powershell
-python -m venv .venv
+uv venv --python 3.12
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -255,7 +253,7 @@ http://127.0.0.1:8005
 ```bash
 export MUSIC_WEB_HOST=127.0.0.1
 export MUSIC_WEB_PORT=8005
-python3 musicdownload.py
+uv run musicdownload.py
 ```
 
 ---
@@ -353,7 +351,7 @@ python3 musicdownload.py
 - 汽水音乐
 - Spotify
 
-> 说明：Web 界面中已隐藏 `TIDAL` 搜索按钮。
+> 说明：
 >
 > 实际搜索/下载可用性取决于 `musicdl` 当前支持情况、目标站点返回结果以及网络环境。
 
@@ -451,23 +449,6 @@ ffmpeg -version
 - 访问控制
 
 </details>
-
----
-
-<a id="compare"></a>
-
-## 🆚 与旧版的区别
-
-相对于旧的 PyQt5 桌面版，当前 Web 版主要变化如下：
-
-| 旧版 | 当前版本 |
-|---|---|
-| `PyQt5` 桌面 GUI | 本地 Web UI |
-| 多文件前端资源 | 单文件内嵌模板与样式 |
-| 无网页目录浏览 | 支持网页浏览下载目录 |
-| 无实时 Web 进度 | 支持实时下载进度轮询 |
-| 原始格式为主 | 可自动转 MP3 |
-| 目录可能分散 | 自动整理为扁平音频目录 |
 
 ---
 
