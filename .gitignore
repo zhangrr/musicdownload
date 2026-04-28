@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Runtime / temp
+.musicdownload_runtime/
+*.log
+
+# Download outputs
+已下载音乐/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
